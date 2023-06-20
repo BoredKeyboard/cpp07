@@ -6,12 +6,12 @@
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/06 14:05:01 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/06/20 13:24:49 by mforstho      ########   odam.nl         */
+/*   Updated: 2023/06/20 16:22:31 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "template.hpp"
+#include "Template.hpp"
 
 int main( void ) {
 	int a = 2;
