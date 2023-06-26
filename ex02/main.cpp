@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Array.hpp                                          :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/06/20 16:22:37 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/06/26 15:11:59 by mforstho      ########   odam.nl         */
+/*   Created: 2023/06/20 13:41:31 by mforstho      #+#    #+#                 */
+/*   Updated: 2023/06/26 16:25:00 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+#include <iostream>
+#include "Array.hpp"
 
-template<class T>
-class Array {
-	private:
-		T			*_array;
-		unsigned int _size;
+int main( void ) {
+	Array<int> a(1);
 
-	public:
-		Array(void);
-		Array(unsigned int n);
-		Array(Array const & src);
-		virtual ~Array(void);
-		Array & operator=(Array const & src);
-		unsigned int size(Array const & src);
-};
+	a[0] = 2;
 
-#endif
+	const Array<int> b(a);
+
+	std::cout << b[0] << std::endl;
+
+	return (EXIT_SUCCESS);
+}
