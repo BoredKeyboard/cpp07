@@ -6,11 +6,11 @@
 #    By: mforstho <mforstho@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/31 11:22:02 by mforstho      #+#    #+#                  #
-#    Updated: 2023/06/20 13:32:57 by mforstho      ########   odam.nl          #
+#    Updated: 2023/07/06 16:40:03 by mforstho      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := iter
+NAME := array
 CC := c++
 CFLAGS ?= -Wextra -Wall -Werror -std=c++98 -pedantic #-fsanitize=address -g
 

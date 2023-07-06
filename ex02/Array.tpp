@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Array.cpp                                          :+:    :+:            */
+/*   Array.tpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/26 14:12:12 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/06/26 16:22:09 by mforstho      ########   odam.nl         */
+/*   Updated: 2023/07/06 16:55:21 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Array<T>::Array(unsigned int n) {
 }
 
 template<class T>
-Array<T>::Array(Array const & src) {
+Array<T>::Array(Array<T> const & src) {
 	this->_array = new T[src._size];
 	for (unsigned int i = 0; i < src._size; i++) {
 		this->_array[i] = src._array[i];
@@ -43,13 +43,40 @@ Array<T>::~Array(void) {
 }
 
 template<class T>
-unsigned int Array<T>::size(Array const & src) {
+unsigned int Array<T>::size(void) {
 	return (this->_size);
 }
 
 template<class T>
-Array<T> & Array<T>::operator=(Array const & src) {
+Array<T> & Array<T>::operator=(Array<T> const & src) {
 	if (this == &src)
 		return (*this);
+	this->_array = new T[src._size];
+	for (unsigned int i = 0; i < src._size; i++) {
+		this->_array[i] = src._array[i];
+	}
+	this->_size = src._size;
 	return (*this);
 }
+
+template<class T>
+T & Array<T>::operator[](unsigned int index) {
+	if (index >= this->_size || index < 0) {
+		throw std::out_of_range("Index out of bounds");
+	}
+	return (this->_array[index]);
+}
+
+template<class T>
+T const & Array<T>::operator[](unsigned int index) const {
+	if (index >= this->_size || index < 0) {
+		throw std::out_of_range("Index out of bounds");
+	}
+	return (this->_array[index]);
+}
+
+// template<class T>
+// std::ostream &operator<<(std::ostream &os, Array<T> &src) {
+// 	os << src._array << std::endl;
+// 	return (os);
+// }
