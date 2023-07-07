@@ -6,7 +6,7 @@
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/26 14:12:12 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/07/06 16:55:21 by mforstho      ########   odam.nl         */
+/*   Updated: 2023/07/07 15:25:45 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,23 @@ template<class T>
 Array<T> & Array<T>::operator=(Array<T> const & src) {
 	if (this == &src)
 		return (*this);
-	this->_array = new T[src._size];
-	for (unsigned int i = 0; i < src._size; i++) {
-		this->_array[i] = src._array[i];
+	if (src._array) {
+		if (this->_size > 0) {
+			delete[] this->_array;
+		}
+		this->_size = src._size;
+		this->_array = new T[src._size];
+		for (unsigned int i = 0; i < src._size; i++) {
+			this->_array[i] = src._array[i];
+		}
 	}
-	this->_size = src._size;
+	else {
+		if (this->_size > 0) {
+			delete[] this->_array;
+		}
+		this->_size = 0;
+		this->_array = NULL;
+	}
 	return (*this);
 }
 
