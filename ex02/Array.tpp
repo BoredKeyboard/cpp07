@@ -6,7 +6,7 @@
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/26 14:12:12 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/07/07 15:25:45 by mforstho      ########   odam.nl         */
+/*   Updated: 2023/08/02 11:48:43 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@ Array<T>::Array(void) {
 template<class T>
 Array<T>::Array(unsigned int n) {
 	this->_array = new T[n];
-	for (unsigned int i = 0; i < n; i++) {
-		this->_array[i] = 0;
-	}
 	this->_size = n;
 }
 
@@ -86,9 +83,3 @@ T const & Array<T>::operator[](unsigned int index) const {
 	}
 	return (this->_array[index]);
 }
-
-// template<class T>
-// std::ostream &operator<<(std::ostream &os, Array<T> &src) {
-// 	os << src._array << std::endl;
-// 	return (os);
-// }
