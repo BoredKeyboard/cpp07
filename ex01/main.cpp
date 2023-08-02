@@ -6,12 +6,12 @@
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/20 13:41:31 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/06/20 16:22:21 by mforstho      ########   odam.nl         */
+/*   Updated: 2023/08/02 11:42:48 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Iter.hpp"
+#include "iter.hpp"
 
 int main( void ) {
 	int array[5];
